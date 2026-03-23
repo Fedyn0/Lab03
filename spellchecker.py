@@ -23,4 +23,7 @@ class SpellChecker:
 
 
 def replaceChars(text):
-    pass
+    chars = "\*'|£%&/()=?^*§°-+,.-@#[]{}!"
+    for c in chars:
+        text = text.replace(c, "")
+    return text
