@@ -1,10 +1,12 @@
+import resources
+
 class Dictionary:
     def __init__(self):
         self._dict = []
 
     def loadDictionary(self,path):
         with open(path,'r', encoding="utf-8") as f:
-            righe = path.readlines()
+            righe = f.readlines()
             for riga in righe:
                 parola_pulita = riga.strip().lower()
                 self._dict.append(parola_pulita)
