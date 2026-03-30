@@ -9,10 +9,14 @@ class SpellChecker:
 
     def handleSentence(self, txtIn, language):
         language = language.capitalize()
-        self.multidizionario.printDic(language)
-
-
-        print("ciao")
+        lista = txtIn.split()
+        print(lista)
+        start = time.time()
+        for word in lista:
+            self.multidizionario.searchWord(word, language)
+        end = time.time()
+        tempo_impiegato = end - start
+        print(f"Tempo impiegato: {tempo_impiegato}")
 
     def printMenu(self):
         print("______________________________\n" +
@@ -25,9 +29,10 @@ class SpellChecker:
               "4. Exit\n" +
               "______________________________\n")
 
-@staticmethod
-def replaceChars(text):
-    chars = "\\`*_{}[]()>#+-.!$%^;,=_~"
-    for c in chars:
-        text = text.replace(c, "")
-    return text
+    @staticmethod
+    def replaceChars(text):
+        chars = "\\`'*_{}[]()>#+-.!$%^;,=_~?:§°/&£"
+        for c in chars:
+            text = text.replace(c, "")
+        text = text.lower()
+        return text

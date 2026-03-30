@@ -16,7 +16,8 @@ class MultiDictionary:
         self.dizionari[language].printAll()
 
 
-    def searchWord(self, words, language):
+    def searchWord(self, word, language):
+
         pass
 
 
