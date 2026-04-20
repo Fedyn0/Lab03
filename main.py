@@ -14,8 +14,6 @@ while(True):
         continue
 
 
-    # Add input control here!
-
     if int(txtIn) == 1:
         print("Inserisci la tua frase in Italiano\n")
         txtIn = input()
